@@ -58,7 +58,6 @@ gulp.task 'test', ->
     .pipe mocha {
       reporter: 'spec'
       globals: {
-        should: require 'should'
         coffee: require 'coffee-script/register'
         stack: Error.stackTraceLimit = 3
       }

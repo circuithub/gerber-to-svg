@@ -2,14 +2,14 @@
 # from http://stackoverflow.com/a/18543419/3826558
 
 module.exports = (stream) ->
-  oldWrite = stream.write;
-  buf = '';
-  stream.write = (chunk, encoding, callback) ->
+  if not console? then window.console = {}
+  oldWrite = console[stream]
+  buf = ''
+  console[stream] = (chunk) ->
     # chunk is a string or buffer
     buf += chunk.toString()
-    oldWrite.apply stream, arguments
 
   return {
-    unhook: -> stream.write = oldWrite
+    unhook: -> console[stream] = oldWrite
     captured: -> buf
   }

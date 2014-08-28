@@ -1,7 +1,8 @@
 # test suite for the plot method of the plotter class
-Plotter = require '../src/plotter'
-GerberReader = require '../src/gerber-reader'
-GerberParser = require '../src/gerber-parser'
+should = require 'should'
+Plotter = require '../src/plotter.coffee'
+GerberReader = require '../src/gerber-reader.coffee'
+GerberParser = require '../src/gerber-parser.coffee'
 fs = require 'fs'
 
 describe 'the plot method of the Plotter class', ->

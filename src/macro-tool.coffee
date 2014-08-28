@@ -2,11 +2,11 @@
 # parses an aperture macro and then returns the pad when the tool is defined
 
 # uses the pad shapes functions
-shapes = require './pad-shapes'
+shapes = require './pad-shapes.coffee'
 # calculator parsing for macro arithmetic
-calc = require './macro-calc'
+calc = require './macro-calc.coffee'
 # unique id generator
-unique = require './unique-id'
+unique = require './unique-id.coffee'
 
 class MacroTool
   # constructor takes in macro blocks

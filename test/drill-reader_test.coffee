@@ -1,5 +1,6 @@
 # test suit for the NC drill file parser
-Reader = require '../src/drill-reader'
+should = require 'should'
+Reader = require '../src/drill-reader.coffee'
 
 # twenty line test file
 TEST_DRILL = '''

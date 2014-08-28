@@ -4,9 +4,9 @@
 #   trace stroke properties as an object (or false if tool is untraceable)
 
 # unique number generator to avoid id collisions
-unique = require './unique-id'
+unique = require './unique-id.coffee'
 # standard pad shapes
-shapes = require './pad-shapes'
+shapes = require './pad-shapes.coffee'
 
 standardTool = (tool, p) ->
   result = { pad: [], trace: false }

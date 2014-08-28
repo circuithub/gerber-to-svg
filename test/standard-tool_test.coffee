@@ -1,6 +1,6 @@
 # test suite for the standard tool functions
-
-standard = require '../src/standard-tool'
+should = require 'should'
+standard = require '../src/standard-tool.coffee'
 
 tool = 'D10'
 describe 'standard tool function', ->

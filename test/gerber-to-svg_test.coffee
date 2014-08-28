@@ -1,6 +1,6 @@
 # test suite for the gerber-to-svg function
-
-gerberToSvg = require '../src/gerber-to-svg'
+should = require 'should'
+gerberToSvg = require '../src/gerber-to-svg.coffee'
 fs = require 'fs'
 
 exGerb = fs.readFileSync './test/gerber/gerber-spec-example-2.gbr', 'utf-8'

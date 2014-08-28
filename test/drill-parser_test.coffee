@@ -1,5 +1,6 @@
 # test suit for the NC drill file parser
-Parser = require '../src/drill-parser'
+should = require 'should'
+Parser = require '../src/drill-parser.coffee'
 
 describe 'NC drill file parser', ->
   p = null
@@ -37,7 +38,7 @@ describe 'NC drill file parser', ->
     p.format.places = [2,4]
     # have a backup
     p.format.zero?.should.not.be.true
-    hook = require('./stream-capture')(process.stderr)
+    hook = require('./stream-capture.coffee')('warn')
     p.parseCommand 'X50Y15500'
     p.format.zero.should.eql 'L'
     hook.captured().should.match /assuming leading zero suppression/

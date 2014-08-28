@@ -3,7 +3,7 @@
 # takes a gerber block object and acts accordingly
 
 # parse coordinate function
-parseCoord = require './coord-parser'
+parseCoord = require './coord-parser.coffee'
 
 # constants
 # regular expression to match a coordinate

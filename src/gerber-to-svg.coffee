@@ -4,8 +4,8 @@ shared under the terms of the MIT license
 view source at http://github.com/mcous/gerber-to-svg
 ###
 
-builder = require './obj-to-xml'
-Plotter = require './plotter'
+builder = require './obj-to-xml.coffee'
+Plotter = require './plotter.coffee'
 
 DEFAULT_OPTS = {
   drill: false
@@ -25,11 +25,11 @@ module.exports = (gerber, options = {}) ->
   # or we got a string, so plot the thing
   # get the correct reader and parser
   if opts.drill
-    Reader = require './drill-reader'
-    Parser = require './drill-parser'
+    Reader = require './drill-reader.coffee'
+    Parser = require './drill-parser.coffee'
   else
-    Reader = require './gerber-reader'
-    Parser = require './gerber-parser'
+    Reader = require './gerber-reader.coffee'
+    Parser = require './gerber-parser.coffee'
   # create the plotter
   p = new Plotter gerber, Reader, Parser
   # try to plot

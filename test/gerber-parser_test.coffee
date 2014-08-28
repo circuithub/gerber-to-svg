@@ -1,5 +1,6 @@
 # test suite for GerberParser class
-Parser = require '../src/gerber-parser'
+should = require 'should'
+Parser = require '../src/gerber-parser.coffee'
 
 param = (p) -> { param: [ p ] }
 block = (b) -> { block: b }

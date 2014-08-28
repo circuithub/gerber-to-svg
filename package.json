@@ -15,6 +15,22 @@
     "type": "git",
     "url": "git://github.com/mcous/gerber-to-svg.git"
   },
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "brfs"
+    ]
+  },
+  "testling": {
+    "harness": "mocha-bdd",
+    "files": "test/*_test.coffee",
+    "browsers": [
+      "chrome/latest",
+      "firefox/latest",
+      "safari/latest",
+      "ie/9..latest"
+    ]
+  },
   "keywords": [
     "svg",
     "gerber",
@@ -30,6 +46,7 @@
   },
   "homepage": "https://github.com/mcous/gerber-to-svg",
   "devDependencies": {
+    "brfs": "^1.2.0",
     "browserify": "^5.9.1",
     "coffee-coverage": "^0.4.2",
     "coffee-script": "^1.7.1",

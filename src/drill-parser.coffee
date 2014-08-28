@@ -3,7 +3,7 @@
 # has a parseCommand method that takes a block and acts accordingly
 
 # parse coordinate function
-parseCoord = require './coord-parser'
+parseCoord = require './coord-parser.coffee'
 
 # some command constants
 INCH_COMMAND = { 'FMAT,1': 'M70', 'FMAT,2': 'M72'}

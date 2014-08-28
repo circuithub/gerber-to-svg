@@ -1,4 +1,5 @@
-id = require '../src/unique-id'
+should = require 'should'
+id = require '../src/unique-id.coffee'
 
 describe 'unique id generator', ->
   it 'should be able to generate a bunch of unique ids', ->
@@ -13,6 +14,6 @@ describe 'unique id generator', ->
     counter = 0
     uniqueId = id()
     do (uniqueId) ->
-      otherIdFunc = require '../src/unique-id'
+      otherIdFunc = require '../src/unique-id.coffee'
       otherId = otherIdFunc()
       otherId.should.not.equal uniqueId

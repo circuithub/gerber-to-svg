@@ -1,5 +1,6 @@
 # test suite for the gerber file reader
-Reader = require '../src/gerber-reader'
+should = require 'should'
+Reader = require '../src/gerber-reader.coffee'
 
 # twenty command, twenty line gerber file
 TEST_GERBER = '''

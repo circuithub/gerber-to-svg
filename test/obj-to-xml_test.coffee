@@ -1,5 +1,6 @@
 # test suite for simple js object to xml string
-objToXml = require '../src/obj-to-xml'
+should = require 'should'
+objToXml = require '../src/obj-to-xml.coffee'
 
 describe 'object to xml function', ->
   it 'should return an empty string for an empty object', ->

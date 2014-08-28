@@ -1,6 +1,6 @@
 # unit tests for shape objects
-
-shapes = require '../src/pad-shapes'
+should = require 'should'
+shapes = require '../src/pad-shapes.coffee'
 
 describe 'shape functions', ->
   describe 'for circles', ->

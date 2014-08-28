@@ -1,5 +1,6 @@
 # tests for the macro arithmetic calc
-calc = require '../src/macro-calc'
+should = require 'should'
+calc = require '../src/macro-calc.coffee'
 tokenize = calc.tokenize
 isNumber = calc.isNumber
 parse = calc.parse

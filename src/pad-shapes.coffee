@@ -2,7 +2,7 @@
 # returns an array of shape objects and the bounding box of the shape
 
 # unique id because thermals need a mask
-unique = require './unique-id'
+unique = require './unique-id.coffee'
 
 circle = (p) ->
   unless p.dia? then throw new Error 'circle function requires diameter'

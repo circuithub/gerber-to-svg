@@ -30,10 +30,8 @@ gulp.task 'default', ->
 
 gulp.task 'standalone', ->
   browserify ENTRY, {
-      extensions: [ '.coffee' ]
       standalone: NAME
     }
-    .transform 'coffeeify'
     .bundle()
       .on 'error', gutil.log
     .pipe source DIST+'.js'

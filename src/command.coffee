@@ -3,7 +3,7 @@ fs = require 'fs'
 path = require 'path'
 parseArgs = require 'minimist'
 chalk = require 'chalk'
-gerberToSvg = require './gerber-to-svg'
+gerberToSvg = require './gerber-to-svg.coffee'
 
 # stream capture
 streamCapture = (stream) ->

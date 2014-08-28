@@ -1,8 +1,9 @@
 # test suite for plotter class
-Plotter = require '../src/plotter'
+should = require 'should'
+Plotter = require '../src/plotter.coffee'
 # stream hook for testing for warnings
-streamCapture = require './stream-capture'
-stderr = -> streamCapture(process.stderr)
+streamCapture = require './stream-capture.coffee'
+stderr = -> streamCapture 'warn'
 
 describe 'Plotter class', ->
   p = null
@@ -44,7 +45,7 @@ describe 'Plotter class', ->
         (-> p.command { set: { currentTool: 'D10' } }).should.throw /tool/
       it 'should not throw missing tool exception for drill files', ->
         # drill files sometimes do this, so check for it
-        p = new Plotter '', null, require '../src/drill-parser'
+        p = new Plotter '', null, require '../src/drill-parser.coffee'
         (-> p.command { set: { currentTool: 'T0' } } ).should.not.throw()
       it 'should throw if region mode is on', ->
         p.region = true
@@ -141,7 +142,7 @@ describe 'Plotter class', ->
           .should.throw /format/
 
       it 'should assume notation is absolute if not set on a drill file', ->
-        p = new Plotter '', null, require '../src/drill-parser'
+        p = new Plotter '', null, require '../src/drill-parser.coffee'
         p.units = 'in'
         p.command { tool: { T1: { dia: 1 } } }
         (-> p.command { op: { do: 'flash', x: 1, y: 1 } }).should.not.throw()

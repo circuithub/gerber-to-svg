@@ -1,11 +1,11 @@
 # svg plotter class
 
 # unique id generator
-unique = require './unique-id'
+unique = require './unique-id.coffee'
 # aperture macro class
-Macro = require './macro-tool'
+Macro = require './macro-tool.coffee'
 # standard tool functions
-tool = require './standard-tool'
+tool = require './standard-tool.coffee'
 
 # constants
 HALF_PI = Math.PI/2

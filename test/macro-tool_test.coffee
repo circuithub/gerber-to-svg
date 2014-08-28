@@ -1,6 +1,6 @@
 # tests for the aperture macro class
-
-Macro = require '../src/macro-tool'
+should = require 'should'
+Macro = require '../src/macro-tool.coffee'
 
 describe 'tool macro class', ->
   it 'should identify itself', ->

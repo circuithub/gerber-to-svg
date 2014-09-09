@@ -15,12 +15,6 @@
     "type": "git",
     "url": "git://github.com/mcous/gerber-to-svg.git"
   },
-  "browserify": {
-    "transform": [
-      "coffeeify",
-      "brfs"
-    ]
-  },
   "testling": {
     "harness": "mocha-bdd",
     "files": "test/*_test.coffee",
@@ -61,10 +55,19 @@
     "gulp-uglify": "^0.3.1",
     "gulp-util": "^2.2.19",
     "jquery": "^2.1.1",
+    "karma": "^0.12.23",
+    "karma-bro": "^0.7.0",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-coffee-preprocessor": "^0.2.1",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-mocha": "^0.1.9",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-sauce-launcher": "^0.2.10",
     "mocha": "^1.20.1",
     "mocha-lcov-reporter": "0.0.1",
     "node-static": "^0.7.4",
     "should": "^4.0.4",
+    "uglifyify": "^2.5.0",
     "vinyl-source-stream": "^0.1.1"
   },
   "dependencies": {

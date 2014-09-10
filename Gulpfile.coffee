@@ -11,6 +11,7 @@ rename     = require 'gulp-rename'
 uglify     = require 'gulp-uglify'
 streamify  = require 'gulp-streamify'
 stat       = require 'node-static'
+karma      = require('karma').server
 
 # application entry point to generate standalone library
 ENTRY = './src/gerber-to-svg.coffee'
@@ -64,6 +65,20 @@ gulp.task 'test', ->
     }
     .on 'error', (e) ->
       if e.name is 'SyntaxError' then gutil.log e.stack else gutil.log e.message
+
+gulp.task 'test:browsers', (done) ->
+  getBrowsers = require './karma.browsers.coffee'
+  getBrowsers (browsers) ->
+    nTest = 3
+    browserArr = Object.keys(browsers)
+    runTests = ->
+      bArr = browserArr.splice 0, nTest
+      if bArr.length is 0 then done() else karma.start {
+        configFile: __dirname + '/karma.conf-ci.coffee'
+        customLaunchers: browsers
+        browsers: bArr
+      }, runTests
+    runTests()
 
 # this is also ugly but it works
 gulp.task 'coverage', [ 'test' ], ->

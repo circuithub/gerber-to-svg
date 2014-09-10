@@ -2,68 +2,13 @@
 # Generated on Mon Sep 08 2014 18:24:39 GMT-0400 (EDT)
 
 module.exports = (config) ->
-  # Browsers to run on Sauce Labs
-  customLaunchers = {
-    'SL_Chrome': {
-      base: 'SauceLabs'
-      browserName: 'chrome'
-    }
-    'SL_WinChrome': {
-      base: 'SauceLabs'
-      browserName: 'chrome'
-      platform: 'Windows 7'
-    }
-    'SL_MacChrome': {
-      base: 'SauceLabs'
-      browserName: 'chrome'
-      platform: 'OS X 10.9'
-    }
-    'SL_Firefox': {
-      base: 'SauceLabs'
-      browserName: 'firefox'
-    }
-    # 'SL_WinFirefox': {
-    #   base: 'SauceLabs'
-    #   browserName: 'firefox'
-    #   platform: 'Windows 7'
-    # }
-    # 'SL_MacFirefox': {
-    #   base: 'SauceLabs'
-    #   browserName: 'firefox'
-    #   platform: 'OS X 10.9'
-    # }
-    'SL_IE9': {
-      base: 'SauceLabs',
-      browserName: 'internet explorer',
-      version: '9'
-    }
-    'SL_IE10': {
-      base: 'SauceLabs',
-      browserName: 'internet explorer',
-      version: '10'
-    }
-    'SL_IE11': {
-      base: 'SauceLabs',
-      browserName: 'internet explorer',
-      version: '11'
-    }
-    # 'SL_Safari5': {
-    #   base: 'SauceLabs',
-    #   browserName: 'safari',
-    #   version: '5'
-    # }
-    'SL_Safari6': {
-      base: 'SauceLabs',
-      browserName: 'safari',
-      version: '6'
-    }
-    'SL_Safari7': {
-      base: 'SauceLabs',
-      browserName: 'safari',
-      version: '7'
-    }
-  }
 
+  # customLaunchers = {
+  #   'SL_Chrome': {
+  #     base: 'SauceLabs'
+  #     browserName: 'chrome'
+  #   }
+  # }
 
   config.set
 
@@ -121,9 +66,4 @@ module.exports = (config) ->
       recordScreenshots: false
     }
     captureTimeout: 120000
-    customLaunchers: customLaunchers
-
-    # start these browsers
-    # available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: Object.keys(customLaunchers)
     singleRun: true

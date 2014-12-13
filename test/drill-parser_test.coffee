@@ -62,6 +62,9 @@ describe 'NC drill file parser', ->
   it 'shoud use custom format if specified', ->
     p = new Parser [ 4, 4 ]
     p.format.places.should.eql [ 4, 4 ]
+  it 'should parse format from comments if specified', ->
+    p.parseCommand ';FILE_FORMAT=4:5'
+    p.format.places.should.eql [ 4, 5 ]
   describe 'tool definitions', ->
     it 'should return a define tool command for tool definitions', ->
       p.parseCommand 'T1C0.015'

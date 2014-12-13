@@ -32,7 +32,12 @@ class DrillParser
   parseCommand: (block) ->
     command = {}
     # check for comment
-    if block[0] is ';' then return command
+    if block[0] is ';'
+      # potentially parse format from comment
+      format = (block.match /\s*file_format\s*=\s*(\d):(\d)/i)?[1..2]
+      if format
+        @format.places ?= format.map Number
+      return command
 
     # format 1 command
     # this will likely never happen

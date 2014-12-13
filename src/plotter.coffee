@@ -62,7 +62,12 @@ class Plotter
     if @tools[code]? then throw new Error "cannot reassign tool #{code}"
     # get the tool
     if params.macro? then t = @macros[params.macro].run code, params.mods
-    else t = tool code, params
+    else
+      try
+        t = tool code, params
+      catch e
+        console.log "Error creating tool: ", e
+        return
     # set the object in the tools collection
     @tools[code] = {
       trace: t.trace
